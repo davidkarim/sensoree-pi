@@ -47,7 +47,7 @@ def loop():
             		print timestamp
             		counter = 60
 			headers = {'Content-type': 'multipart/form-data', 'Accept': 'application/json'}
-			r = requests.post("http://192.168.1.14:3000/events/create", data={"api_key":"NR71J65VHMH5WZ26A1K4", "sensor_id": 2, "value":dis, "notified":"false", "capture_time":timestamp}, headers=headers)
+			r = requests.post("http://www.sensoree.net/events/create", data={"api_key":"OP1BVFIABXF95B2PD74Y", "sensor_id": 7, "value":dis, "notified":"false", "capture_time":timestamp}, headers=headers)
 			print(r.status_code, r.reason)
 			print(r.text[:10000] + '...')
 def destroy():

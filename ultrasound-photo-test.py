@@ -50,7 +50,7 @@ def loop():
             		counter = 60
 			camera.capture("image.jpeg")
 			headers = {'Accept': 'application/json'}
-			r = requests.post("http://192.168.1.14:3000/events/create", data={"api_key":"NR71J65VHMH5WZ26A1K4", "sensor_id": 2, "value":dis, "notified":"false", "capture_time":timestamp}, files={'photo': ('image,jpeg', open('image.jpeg','rb'), 'image/jpeg')}, headers=headers)
+			r = requests.post("http://www.sensoree.net/events/create", data={"api_key":"OP1BVFIABXF95B2PD74Y", "sensor_id": 7, "value":dis, "notified":"false", "capture_time":timestamp}, files={'photo': ('image,jpeg', open('image.jpeg','rb'), 'image/jpeg')}, headers=headers)
 			print(r.status_code, r.reason)
 			print(r.text[:10000] + '...')
 def destroy():
