@@ -16,8 +16,8 @@ while (count < 20):
   timestamp = datetime.now()
   print timestamp
 
-  # Send ping request to a host, this example uses google
-  hostname = "google.com"
+  # Send ping request to a host, this example uses sensoree
+  hostname = "sensoree.net"
   response = os.popen("ping -c 1 " + hostname).read()
 
   # Parse data to retrieve response time in ms  
@@ -25,7 +25,7 @@ while (count < 20):
   print ping_time + " ms"
 
   headers = {'Content-type': 'multipart/form-data', 'Accept': 'application/json'}
-  r = requests.post("http://192.168.1.14:3000/events/create", data={"api_key":"NR71J65VHMH5WZ26A1K4", "sensor_id": 19, "value":ping_time, "notified":"false", "capture_time":timestamp}, headers=headers)
+  r = requests.post("http://www.sensoree.net/events/create", data={"api_key":"HVL9BWCA6KE06IMRGL21", "sensor_id": 9, "value":ping_time, "notified":"false", "capture_time":timestamp}, headers=headers)
   print(r.status_code, r.reason)
   print(r.text[:10000] + '...')
 

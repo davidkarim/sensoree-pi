@@ -37,7 +37,7 @@ def distance():
 
 def loop():
 	camera = picamera.PiCamera()
-	counter = 60
+	counter = 12
 	while True:
         	counter = counter - 1
         	timestamp = datetime.now()
@@ -47,10 +47,10 @@ def loop():
 		time.sleep(0.5)
 		if counter == 0:
             		print timestamp
-            		counter = 60
+            		counter = 12
 			camera.capture("image.jpeg")
 			headers = {'Accept': 'application/json'}
-			r = requests.post("http://www.sensoree.net/events/create", data={"api_key":"OP1BVFIABXF95B2PD74Y", "sensor_id": 7, "value":dis, "notified":"false", "capture_time":timestamp}, files={'photo': ('image,jpeg', open('image.jpeg','rb'), 'image/jpeg')}, headers=headers)
+			r = requests.post("http://www.sensoree.net/events/create", data={"api_key":"HVL9BWCA6KE06IMRGL21", "sensor_id": 10, "value":dis, "notified":"false", "capture_time":timestamp}, files={'photo': ('image,jpeg', open('image.jpeg','rb'), 'image/jpeg')}, headers=headers)
 			print(r.status_code, r.reason)
 			print(r.text[:10000] + '...')
 def destroy():
